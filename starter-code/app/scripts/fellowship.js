@@ -149,30 +149,51 @@ function forgeTheFellowShip() {
   // after each character is added make an alert that they have joined your party
 var fellow = document.createElement("div");
 fellow.setAttribute("id", "the-fellowship");
-let theLength = 0
-if (hobbits.length > buddies.length) {
-   theLength = hobbits.length
-} else {
-   theLength = buddies.length
-}
-for (let i = 0; i < theLength; i++) {
-  let buddyChild = document.createElement("p")
-  buddyChild.innerHTML = buddies[i]
-  let hobbitChild = document.createElement("p")
-  hobbitChild.innerHTML = hobbits[i]
-  let rivendell = document.querySelectorAll("article")[1];
-  if (buddies[i]) {
-    alert("Buddy" + " " + buddies[i] + " " + "has joined your party")
-    rivendell.appendChild(buddyChild)
-  }
-  if (hobbits[i]) {
-    alert("Hobbit" + " " + hobbits[i] + " " + "has joined your party")
-    rivendell.appendChild(hobbitChild)
-  }
-}
+var rivendell = document.querySelectorAll('article')[1];
+var hobbits = ['Frodo Baggins', 'Sam', 'Merry', 'Pippin', ' ' ];
+var buddies = ['Gandalf the Grey', 'Legolas', 'Gimli', "Strider", 'Boromir'];
+
+alert(hobbits + buddies + " " + "has joined your party")
+var team = hobbits.concat(buddies);
 
 
+// let theLength = 0
+// if (hobbits.length > buddies.length) {
+//    theLength = hobbits.length
+// } else {
+//    theLength = buddies.length
+// }
+// for (let i = 0; i < theLength; i++) {
+//   let buddyChild = document.createElement("p")
+//   buddyChild.innerHTML = buddies[i]
+//   let hobbitChild = document.createElement("p")
+//   hobbitChild.innerHTML = hobbits[i]
+//   let rivendell = document.querySelectorAll("article")[1];
+//   if (buddies[i]) {
+//     alert("Buddy" + " " + buddies[i] + " " + "has joined your party")
+//     rivendell.appendChild(buddyChild)
+//   }
+//   if (hobbits[i]) {
+//     alert("Hobbit" + " " + hobbits[i] + " " + "has joined your party")
+//     rivendell.appendChild(hobbitChild)
+//   }
+// }
+// var elfVillage = document.querySelectorAll('article')[1];
+// var children = document.getElementById("smallBoys");
+// console.log(children);
+//   for (var i = 0; i < children.length; i++) {
+//   fellow.appendChild(children[i]);
+//   alert("Buddy" + " " + children[i] + " " + "has joined your party")   
+// }
+// console.log(children.length);
 
+// var efdw = document.getElementById("theMen");
+// for (var i = 0; i < efdw.length; i++) {
+//   fellow.appendChild(efdw[i]);
+// }
+// console.log(efdw);
+
+// elfVillage.appendChild(fellow);
 
 
 }
@@ -186,11 +207,15 @@ function theBalrog() {
   // change the 'Gandalf' textNode to 'Gandalf the White'
   // apply style to the element
   // make the background 'white', add a grey border
-var wizard = document.getElementById("Gandalf");
-console.log(wizard);
-wizard.innerHTML = "Gandalf the White";
-}
+  var wizard = document.getElementById("Gandalf the Grey").textContent;
+  document.getElementById("Gandalf the Grey").textContent= "Gandalf the White";
+  document.body.style.backgroundColor = "white";
+  document.body.style.borderColor = "grey";
 
+  
+
+ 
+}
 theBalrog()
 
 // Part 9
@@ -200,8 +225,16 @@ function hornOfGondor() {
   // Boromir's been killed by the Uruk-hai!
   // put a linethrough on boromir's name
   // Remove Boromir from the Fellowship
+alert("horn of gondor has been blow");
+alert("Boromir's been killed by the Uruk-hai!");
+var dead = document.getElementsById("Boromir");
+// document.getElementById("Boromir").style.textDecoration = "line-through";
+// for (var i = 0; i < buddies.length; i++) {
+//   dead[i].style.setProperty("text-decoration", "line-through");
+
 }
 
+hornOfGondor()
 
 // Part 10
 

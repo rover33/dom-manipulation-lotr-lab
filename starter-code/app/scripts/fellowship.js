@@ -149,21 +149,28 @@ function forgeTheFellowShip() {
   // after each character is added make an alert that they have joined your party
 var fellow = document.createElement("div");
 fellow.setAttribute("id", "the-fellowship");
-var elfVillage = document.querySelectorAll('article')[1];
-var children = document.getElementById("smallBoys");
-console.log(children);
-  for (var i = 0; i < children.length; i++) {
-  fellow.appendChild(children[i]); 
+let theLength = 0
+if (hobbits.length > buddies.length) {
+   theLength = hobbits.length
+} else {
+   theLength = buddies.length
 }
-console.log(children.length);
-
-var efdw = document.getElementById("theMen");
-for (var i = 0; i < efdw.length; i++) {
-  fellow.appendChild(efdw[i]);
+for (let i = 0; i < theLength; i++) {
+  let buddyChild = document.createElement("p")
+  buddyChild.innerHTML = buddies[i]
+  let hobbitChild = document.createElement("p")
+  hobbitChild.innerHTML = hobbits[i]
+  let rivendell = document.querySelectorAll("article")[1];
+  if (buddies[i]) {
+    alert("Buddy" + " " + buddies[i] + " " + "has joined your party")
+    rivendell.appendChild(buddyChild)
+  }
+  if (hobbits[i]) {
+    alert("Hobbit" + " " + hobbits[i] + " " + "has joined your party")
+    rivendell.appendChild(hobbitChild)
+  }
 }
-console.log(efdw);
 
-elfVillage.appendChild(fellow);
 
 
 
@@ -179,8 +186,12 @@ function theBalrog() {
   // change the 'Gandalf' textNode to 'Gandalf the White'
   // apply style to the element
   // make the background 'white', add a grey border
+var wizard = document.getElementById("Gandalf");
+console.log(wizard);
+wizard.innerHTML = "Gandalf the White";
 }
 
+theBalrog()
 
 // Part 9
 
